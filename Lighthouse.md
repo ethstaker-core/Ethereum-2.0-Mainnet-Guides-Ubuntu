@@ -22,7 +22,7 @@ Continued work on this guide and the port to Github was made possible by a grant
 
 ## Disclaimer
 
-This article (the guide) is for informational purposes only and does not constitute professional advice. The author does not guarantee accuracy of the information in this article and the author is not responsible for any damages or losses incurred by following this article. A [full disclaimer](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#full-disclaimer) can be found at the bottom of this page — please read before continuing.
+This article (the guide) is for informational purposes only and does not constitute professional advice. The author does not guarantee accuracy of the information in this article and the author is not responsible for any damages or losses incurred by following this article. A [full disclaimer](#full-disclaimer) can be found at the bottom of this page — please read before continuing.
 
 ## Support
 
@@ -44,7 +44,7 @@ If moving from a testnet setup to a mainnet setup it is strongly recommended tha
 ## Requirements
 Hardware requirements are a broad topic. In general a relatively modern CPU, 8GB RAM (16GB is better), a SSD of at least 500GB (1TB is better), and a stable internet connection with sufficient download speed and monthly data allowance are likely required for good staking performance.
 
-> NOTE: Check your available disk space. Even you have a large SSD there are cases where Ubuntu is reporting only 200GB free. If this applies to you then take a look at [Appendix D — Expanding the Logical Volume](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#appendix-d--expanding-the-logical-volume).
+> NOTE: Check your available disk space. Even you have a large SSD there are cases where Ubuntu is reporting only 200GB free. If this applies to you then take a look at [Appendix D — Expanding the Logical Volume](#appendix-d--expanding-the-logical-volume).
 
 ## Overview
 The simplified diagram below indicates the scope of this guide. The yellow boxes are the areas this guide mostly covers.
@@ -302,7 +302,7 @@ An Ethereum node is required for staking. You can either run a local Eth1 node o
 
 > NOTE: If you would rather use a third party hosted node - a reasonable option if you don't have the necessary disk space for a local Ethereum (Eth1) Node - then skip this step. Instructions to configure the Lighthouse client with a third party hosted node are included below.
 
-> NOTE: Check your available disk space. An Eth1 node requires roughly 400GB of space. Even you have a large SSD there are cases where Ubuntu is reporting only 200GB free. If this applies to you then take a look at [Appendix D — Expanding the Logical Volume](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#appendix-d--expanding-the-logical-volume).
+> NOTE: Check your available disk space. An Eth1 node requires roughly 400GB of space. Even you have a large SSD there are cases where Ubuntu is reporting only 200GB free. If this applies to you then take a look at [Appendix D — Expanding the Logical Volume](#appendix-d--expanding-the-logical-volume).
 
 ### Install Go Ethereum
 
@@ -452,7 +452,7 @@ $ sudo systemctl start geth
 $ sudo journalctl -fu geth.service
 ```
 
-> NOTE: It is necessary to follow a specific series of steps to update Geth. See [Appendix A — Updating Geth](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#appendix-a--updating-geth) for further information.
+> NOTE: It is necessary to follow a specific series of steps to update Geth. See [Appendix A — Updating Geth](#appendix-a--updating-geth) for further information.
 
 ## Step 7 — Download Lighthouse
 
@@ -499,7 +499,7 @@ $ sudo rm lighthouse
 $ sudo rm lighthouse-v1.3.0-x86_64-unknown-linux-gnu.tar.gz
 ```
 
-> NOTE: It is necessary to follow a specific series of steps to update Lighthouse. See [Appendix B — Updating Lighthouse](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#appendix-b--updating-lighthouse) for further information.
+> NOTE: It is necessary to follow a specific series of steps to update Lighthouse. See [Appendix B — Updating Lighthouse](#appendix-b--updating-lighthouse) for further information.
 
 ## Step 8 — Import the Validator Keys
 
@@ -545,7 +545,7 @@ $ sudo chown -R root:root /var/lib/lighthouse
 
 The import is complete and the wallet is now set up.
 
-> NOTE: It is necessary to follow a specific series of steps to update Geth. See [Appendix C — Adding a Validator](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#appendix-c--adding-a-validator) for further information.
+> NOTE: It is necessary to follow a specific series of steps to update Geth. See [Appendix C — Adding a Validator](#appendix-c--adding-a-validator) for further information.
 
 ## Step 9 — Configure the Beacon Node Service
 
@@ -616,7 +616,7 @@ Reload systemd to reflect the changes and start the service.
 $ sudo systemctl daemon-reload
 ```
 
-> Note: If you are running a local Eth1 node (see [Step 6](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#step-6--set-up-an-ethereum-eth1-node)) you should wait until it fully syncs before starting the lighthousebeacon service. Check progress here: `sudo journalctl -fu geth.service`
+> Note: If you are running a local Eth1 node (see [Step 6](#step-6--set-up-an-ethereum-eth1-node)) you should wait until it fully syncs before starting the lighthousebeacon service. Check progress here: `sudo journalctl -fu geth.service`
 
 Start the service and check to make sure it’s running correctly.
 
@@ -657,7 +657,7 @@ Create an account for the validator node to run under. This type of account can�
 $ sudo useradd --no-create-home --shell /bin/false lighthousevalidator
 ```
 
-In [Step 8](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#step-8--import-the-validator-keys) the validator wallet creation process created the following directory: `/var/lib/lighthouse/validators`. Set directory permissions so the `lighthousevalidator` account can modify that directory.
+In [Step 8](#step-8--import-the-validator-keys) the validator wallet creation process created the following directory: `/var/lib/lighthouse/validators`. Set directory permissions so the `lighthousevalidator` account can modify that directory.
 
 ```
 $ sudo chown -R lighthousevalidator:lighthousevalidator /var/lib/lighthouse/validators
@@ -765,7 +765,7 @@ This step involves depositing the required amount of ETH to the Eth2.0 deposit c
 
 Go here: [https://launchpad.ethereum.org/](https://launchpad.ethereum.org/)
 
-Click through the warning steps and continue through the screens until you get to the **Generate Key Pairs** section. Select the number of validators you are going to run. Choose a value that matches the number of validator files you generated in [Step 1](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#step-1--generate-staking-data).
+Click through the warning steps and continue through the screens until you get to the **Generate Key Pairs** section. Select the number of validators you are going to run. Choose a value that matches the number of validator files you generated in [Step 1](#step-1--generate-staking-data).
 
 ![image](https://user-images.githubusercontent.com/60827187/115158848-175b9e80-a045-11eb-995d-cd018e0ebb78.png)
 
@@ -773,7 +773,7 @@ Scroll down, check the box if you agree, and click Continue.
 
 ![image](https://user-images.githubusercontent.com/60827187/115158853-1e82ac80-a045-11eb-84b1-252dffaf6fde.png)
 
-You will be asked to upload the `deposit_data-[timestamp].json` file. You generated this file in [Step 1](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#step-1--generate-staking-data). Browse/select or drag the file and click Continue.
+You will be asked to upload the `deposit_data-[timestamp].json` file. You generated this file in [Step 1](#step-1--generate-staking-data). Browse/select or drag the file and click Continue.
 
 ![image](https://user-images.githubusercontent.com/60827187/115158866-35290380-a045-11eb-8bd1-78cc3aceb4b9.png)
 
@@ -1083,9 +1083,9 @@ INFO Enabled validator voting_pubkey: 0xb46...26a
 INFO Initialized validators enabled: 5, disabled: 0
 ```
 
-Now that the validators have been imported into your validator wallet and ready to perform duties, you will need to go to [Step 11 — Fund the Validator Keys](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#step-11--fund-the-validator-keys) above and fund the new validators via the Launchpad.
+Now that the validators have been imported into your validator wallet and ready to perform duties, you will need to go to [Step 11 — Fund the Validator Keys](#step-11--fund-the-validator-keys) above and fund the new validators via the Launchpad.
 
-> NOTE: The new validators will not be fully functional until you complete [Step 11](https://github.com/ethstaker-core/Ethereum-2.0-Mainnet-Guides-Ubuntu/new/main#step-11--fund-the-validator-keys).
+> NOTE: The new validators will not be fully functional until you complete [Step 11](#step-11--fund-the-validator-keys).
 
 ## Appendix D — Expanding the Logical Volume
 
