@@ -72,7 +72,7 @@ Each validator requires a deposit of 32 ETH. You should have sufficient ETH in y
 
 Go [here](https://github.com/ethereum/eth2.0-deposit-cli/releases/) to get the “Latest release” of the deposit command line interface (CLI) app.
 
-![image](https://user-images.githubusercontent.com/60827187/113665847-0ed99000-9663-11eb-9909-8ff1ce7f6130.png)
+![image](https://user-images.githubusercontent.com/60827187/126877674-fe1318fe-7ba6-4f52-b6e7-4898a35ad05b.png)
 
 In the **assets** section download the version matching the platform you are currently on (e.g. Windows, Mac, Linux Desktop, etc.).
 
