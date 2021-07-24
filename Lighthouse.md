@@ -459,26 +459,26 @@ $ sudo journalctl -fu geth.service
 The Lighthouse client is a single binary which encapsulates the functionality of the beacon chain and validator. This step will download and prepare the Lighthouse binary.
 First, go [here](https://github.com/sigp/lighthouse/releases) and identify the latest release. It is at the top of the page. For example:
 
-![image](https://user-images.githubusercontent.com/60827187/115157732-bc737880-a03f-11eb-9811-e388e3b7fa05.png)
+![image](https://user-images.githubusercontent.com/60827187/126877929-ffdc40ff-8d71-43a0-bab7-853f19cbf994.png)
 
 In the assets section (expand if necessary) copy the download link to the **lighthouse-v…-x86_64-unknown-linux-gnu.tar.gz** file. Be sure to copy the correct link.
 
 > NOTE: There are two types of binaries — portable and non-portable. The difference is explained [here](https://lighthouse-book.sigmaprime.io/installation-binaries.html). Portable works on a broader set of hardware but comes with a 20% performance cost.
 
-![image](https://user-images.githubusercontent.com/60827187/115157716-a06fd700-a03f-11eb-8a1e-6d80decca3ae.png)
+![image](https://user-images.githubusercontent.com/60827187/126877917-e89871ec-24db-4449-95ea-aee43ddc677b.png)
 
 Download the archive using the commands below. Modify the URL in the instructions below to match the download link for the latest version.
 
 ```
 $ cd ~
 $ sudo apt install curl
-$ curl -LO https://github.com/sigp/lighthouse/releases/download/v1.3.0/lighthouse-v1.3.0-x86_64-unknown-linux-gnu.tar.gz
+$ curl -LO https://github.com/sigp/lighthouse/releases/download/v1.4.0/lighthouse-v1.4.0-x86_64-unknown-linux-gnu.tar.gz
 ```
 
 Extract the binary from the archive and copy to the `/usr/local/bin` directory. The Lighthouse service will run it from there. Modify the URL name as necessary.
 
 ```
-$ tar xvf lighthouse-v1.3.0-x86_64-unknown-linux-gnu.tar.gz
+$ tar xvf lighthouse-v1.4.0-x86_64-unknown-linux-gnu.tar.gz
 $ sudo cp lighthouse /usr/local/bin
 ```
 
@@ -496,7 +496,7 @@ Clean up the extracted files.
 ```
 $ cd ~
 $ sudo rm lighthouse
-$ sudo rm lighthouse-v1.3.0-x86_64-unknown-linux-gnu.tar.gz
+$ sudo rm lighthouse-v1.4.0-x86_64-unknown-linux-gnu.tar.gz
 ```
 
 > NOTE: It is necessary to follow a specific series of steps to update Lighthouse. See [Appendix B — Updating Lighthouse](#appendix-b--updating-lighthouse) for further information.
@@ -736,7 +736,7 @@ $ sudo journalctl -fu lighthousevalidator.service
 A truncated view of the log shows the following status information.
 
 ```
-INFO Lighthouse started version: Lighthouse/v1.3.0-c6baa0e
+INFO Lighthouse started version: Lighthouse/v1.4.0-c6baa0e
 INFO Configured for testnet name: mainnet
 WARN The mainnet specification is being used. This not recommended (yet).
 INFO Starting validator client validator_dir: "/var/lib/lighthouse/validators", beacon_node: http://localhost:5052/
@@ -744,7 +744,7 @@ INFO Completed validator discovery new_validators: 0
 INFO Enabled validator voting_pubkey: 0xaa...
 INFO Enabled validator voting_pubkey: 0x90...
 INFO Initialized validators enabled: 2, disabled: 0
-INFO Connected to beacon node version: Lighthouse/v1.3.0-c6baa0e/x86_64-linux
+INFO Connected to beacon node version: Lighthouse/v1.4.0-c6baa0e/x86_64-linux
 INFO Starting node prior to genesis seconds_to_wait: 444946
 INFO Waiting for genesis seconds_to_wait: 444946, bn_staking_enabled: true
 ```
@@ -884,7 +884,7 @@ First, go [here](https://github.com/sigp/lighthouse/releases) and identify the l
 ```
 $ cd ~
 $ sudo apt install curl
-$ curl -LO https://github.com/sigp/lighthouse/releases/download/v1.3.0/lighthouse-v1.3.0-x86_64-unknown-linux-gnu.tar.gz
+$ curl -LO https://github.com/sigp/lighthouse/releases/download/v1.4.0/lighthouse-v1.4.0-x86_64-unknown-linux-gnu.tar.gz
 ```
 
 Stop the Lighthouse client services.
@@ -897,7 +897,7 @@ $ sudo systemctl stop lighthousebeacon
 Extract the binary from the archive and copy to the `/usr/local/bin` directory. Modify the URL name as necessary.
 
 ```
-$ tar xvf lighthouse-v1.3.0-x86_64-unknown-linux-gnu.tar.gz
+$ tar xvf lighthouse-v1.4.0-x86_64-unknown-linux-gnu.tar.gz
 $ sudo cp lighthouse /usr/local/bin
 ```
 
@@ -918,7 +918,7 @@ Clean up the extracted files.
 ```
 $ cd ~
 $ sudo rm lighthouse
-$ sudo rm lighthouse-v1.3.0-x86_64-unknown-linux-gnu.tar.gz
+$ sudo rm lighthouse-v1.4.0-x86_64-unknown-linux-gnu.tar.gz
 ```
 
 ## Appendix C — Adding a Validator
