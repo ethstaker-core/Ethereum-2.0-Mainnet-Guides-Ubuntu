@@ -544,8 +544,8 @@ $ sudo chown -R root:root /var/lib/lighthouse
 ```
 
 The import is complete and the wallet is now set up.
-
-> NOTE: It is necessary to follow a specific series of steps to update Geth. See [Appendix C — Adding a Validator](#appendix-c--adding-a-validator) for further information.
+ 
+> NOTE: It is necessary to follow a specific series of steps to add an additional validator. See [Appendix C — Adding a Validator](#appendix-c--adding-a-validator) for further information.
 
 ## Step 9 — Configure the Beacon Node Service
 
